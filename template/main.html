@@ -1,0 +1,39 @@
+<div class='warp'>
+  <div class="col-md-8 col-md-offset-2">
+    <md-content flex layout-padding>
+      <h1 class='md-display-3'>Dubois' calculateur stellaire</h1>
+      <p>Calculez facilement la période de révolution d'un astre en jours stellaires standards graçe à cet outils pratique.
+      Les sliders sont des valeurs indicatives, n'hésitez pas à entrer manuellement vos valeurs dans les champs prévus à cet effet.</p>
+
+      <md-switch ng-model="advanced" aria-label="advanced">
+          Mode avancé
+      </md-switch>
+    </md-content>
+
+    <md-content flex layout-padding>
+      <h2 class="md-title">Etape 1</h2>
+      <em>Choisir la masse de votre étoile</em>
+      <dubois-star-selector star='star'></dubois-star-selector>
+    </md-content>
+
+    <md-content ng-if="advanced" flex layout-padding>
+      <h2 class="md-title">Etape 2 <span>-facultatif-<md-tooltip>Terre par défaut.</md-tooltip></span></h2>
+      <em>Choisir la masse de votre planète</em>
+      <dubois-planet-selector planet='planet'></dubois-planet-selector>
+    </md-content>
+
+    <md-content flex layout-padding>
+      <h2 class="md-title">Etape {{advanced ? 3 : 2}}</h2>
+      <em>Indiquer la distance en U.A astre-planète.</em>
+      <dubois-ua-selector></dubois-ua-selector>
+    </md-content>
+
+    <md-content flex layout-padding layout-align="center end">
+      <h2 class="md-display-2">Calcul final</h2>
+      <em>Le résultat !</em>
+      <dubois-final></dubois-final>
+    </md-content>
+
+
+  </div>
+</div>

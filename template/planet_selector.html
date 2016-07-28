@@ -1,0 +1,28 @@
+<div layout-col>
+  <br />
+  <div flex="100">
+    <h3 layout flex="50" >Planète de type {{planet.type}}</h3>
+  </div>
+
+  <div layout flex="100">
+    <md-input-container layout-col flex="50">
+        <label>Selectionez une planète</label>
+        <md-select ng-model="planet.mass">
+          <md-option ng-repeat="planet in planets" value="{{planet.mass}}">
+            {{planet.name}}
+          </md-option>
+        </md-select>
+      </md-input-container>
+
+    <div layout-col flex="100">
+      <md-input-container layout flex="100" >
+        <label flex="100">Masse (en 10^21 kg)</label>
+        <input flex="100" ng-model="planet.mass">
+      </md-input-container><br />
+      <md-slider flex="100" ng-model="planet.mass" min="1" step="1" max="50000" aria-label="rating"></md-slider>
+    </div>
+  </div>
+  <div layout flex="100">
+
+  </div>
+</div>
